@@ -25,9 +25,9 @@ pipeline {
             steps {
                 script {
                     // Stop existing java process on port
-                    bat """
-                    for /f "tokens=5" %a in ('netstat -ano ^| findstr :9090') do taskkill /F /PID %a
-                    """
+                    //bat """
+                    // for /f "tokens=5" %a in ('netstat -ano ^| findstr :9090') do taskkill /F /PID %a
+                    //"""
 
                     // Create deploy folder
                     bat "if not exist %DEPLOY_DIR% mkdir %DEPLOY_DIR%"
