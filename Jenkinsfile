@@ -7,6 +7,10 @@ pipeline {
         JAR_FILE = "target\\springboot-jacoco-demo-0.0.1-SNAPSHOT.jar"
         PORT="9090"
     }
+    
+    triggers {
+        cron('H/5 * * * *')   // every 5 minutes
+    }
 
     stages {
         stage('Checkout') {
