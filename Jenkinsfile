@@ -5,6 +5,7 @@ pipeline {
         APP_NAME = "springboot-jacoco-demo"
         DEPLOY_DIR = "D:/DevOpsDemo/jenkins"   
         JAR_FILE = "/target/springboot-jacoco-demo-0.0.1-SNAPSHOT.jar"
+        PORT="9090"
     }
 
     stages {
