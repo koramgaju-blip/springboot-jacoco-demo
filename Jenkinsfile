@@ -42,7 +42,7 @@ pipeline {
                     // Start new instance
                     bat """
                     cd %DEPLOY_DIR%
-                    start /B java -jar %DEPLOY_DIR%\springboot-jacoco-demo-0.0.1-SNAPSHOT.jar --server.port=9090
+                    start /B java -jar %DEPLOY_DIR%\\springboot-jacoco-demo-0.0.1-SNAPSHOT.jar --server.port=9090
                     """
                 }
             }
