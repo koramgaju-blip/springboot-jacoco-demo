@@ -60,8 +60,8 @@ pipeline {
 	        emailext(
 	            subject: "📢 TEST STAGE RESULT - ${currentBuild.currentResult}",
 	            body: "The TEST stage finished with result: ${currentBuild.currentResult}",
-	            to: 'gajanan.koram@aurionpro.com'
-	            from: "testmail.ggk@gmail.com",
+	            to: 'gajanan.koram@aurionpro.com',
+	            from: "testmail.ggk@gmail.com"
 	        )
 	        echo "✅ Deployment successful! Running at http://localhost:%PORT%"
         }
