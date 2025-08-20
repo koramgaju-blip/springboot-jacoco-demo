@@ -18,6 +18,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/koramgaju-blip/springboot-jacoco-demo.git'
             }
         }
+        
+  		stage('Run Tests') {
+            steps {
+                bat "mvn clean test"
+            }
+        }
 
         stage('Build') {
             steps {
@@ -51,7 +57,12 @@ pipeline {
 
     post {
         success {
-            echo "✅ Deployment successful! Running at http://localhost:%PORT%"
+	        emailext(
+	            subject: "📢 TEST STAGE RESULT - ${currentBuild.currentResult}",
+	            body: "The TEST stage finished with result: ${currentBuild.currentResult}",
+	            to: 'qa-team@example.com'
+	        )
+	        echo "✅ Deployment successful! Running at http://localhost:%PORT%"
         }
         failure {
             echo "❌ Deployment failed."
